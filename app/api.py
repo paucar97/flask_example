@@ -20,3 +20,5 @@ manager.add_command('db', MigrateCommand)
 from app.resource.AlumnoResource import *
 
 api.add_resource(Listar_alumnos, '/api/listar_alumnos')
+api.add_resource(Crear_alumno,'/api/crear_alumno')
+api.add_resource(Obtener_alumno,'/api/obtener_alumno')
