@@ -7,7 +7,8 @@ class Alumno(db.Model):
     id_alumno = db.Column('ID_ALUMNO',db.Integer,primary_key=True)
     nombre = db.Column('NOMBRE', db.String(50), nullable=False)
     apellido_paterno = db.Column('APELLIDO_PATERNO', db.String(100))
-    
+
+
     def toJson(self):
         d= {}
         d['id_alumno'] = self.id_alumno
@@ -15,6 +16,6 @@ class Alumno(db.Model):
         d['apellido_paterno'] = self.apellido_paterno
         return d
 
-    @classmethod
+    """@classmethod
     def getAll(self):
-        return Alumno.query.all() # select * from alumno
+        return Alumno.query.all() # select * from alumno"""

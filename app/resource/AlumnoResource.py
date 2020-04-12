@@ -1,6 +1,7 @@
 from flask_restful import Resource
-from flask import Flask, request
+from flask import Flask, jsonify, request
 from app.controller.AlumnoController import *
+
 
 class Listar_alumnos(Resource):
     def post(self):
@@ -9,4 +10,4 @@ class Listar_alumnos(Resource):
         # SEGURIDAD
         rpta = listarAlumnos()
         
-        return rpta 
+        return jsonify(code=200, data=rpta.toJson(), message='Alumnos obtenidos con exito')

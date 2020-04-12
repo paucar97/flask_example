@@ -11,7 +11,7 @@ def getSessionServer():
     passw= 'GiME4OI9'
     dbName = 'sec2'
     localhost = '127.0.0.1'
-    port = 3307
+    port = 3306
     host = "200.16.7.185"
     #tunnel = sshtunnel.SSHTunnelForwarder(
     #        (host,22),
@@ -22,7 +22,7 @@ def getSessionServer():
     #tunnel.start()
     #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://{}:{}@{}:{}/{}'.format(user,passw,localhost,tunnel.local_bind_port,dbName)
     #"""
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root@localhost:3306/test'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost:3306/test'
     app.config['SQLALCHEMY_POOL_SIZE'] = 5
     app.config['SQLALCHEMY_POOL_TIMEOUT'] = 30
     app.config['SQLALCHEMY_POOL_RECYCLE'] = 31
