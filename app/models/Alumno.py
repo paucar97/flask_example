@@ -18,4 +18,16 @@ class Alumno(db.Model):
 
     """@classmethod
     def getAll(self):
-        return Alumno.query.all() # select * from alumno"""
+        return Alumno.query.all() # select * from alumno
+
+    @classmethod
+    def addOne(self,obj):
+        db.session.add(obj)
+        db.session.flush()
+        db.session.commit()
+        return obj.id_alumno
+
+    @classmethod
+    def getOne(self,id):
+        alumno = Alumno.query.filter_by(id_alumno = id).first()
+        return alumno"""
