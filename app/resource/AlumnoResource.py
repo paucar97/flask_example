@@ -8,14 +8,13 @@ class Listar_alumnos(Resource):
         data = request.get_json()
         # VERIFICACION
         # SEGURIDAD
-        rpta = listarAlumnos()
         
-        return jsonify(code=200, data=rpta.toJson(), message='Alumnos obtenidos con exito')
+        return listarAlumnos()
 
 class Crear_alumno(Resource):
     def post(self):
         data = request.get_json()
-        alumnoDTO = AlumnoDTO(id_alumno=None, nombre=data['nombre'], apellido=data['apellido'])
+        alumnoDTO = AlumnoDTO(nombre=data['nombre'], apellido=data['apellido'])
         return crearAlumno(alumnoDTO)
 
 class Obtener_alumno(Resource):

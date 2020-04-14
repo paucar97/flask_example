@@ -3,9 +3,9 @@ from typing import Dict
 
 @dataclass
 class AlumnoDTO:
-    id_alumno: int
-    nombre: str
-    apellido: str
+    id_alumno: int = None
+    nombre: str = None
+    apellido: str = None
 
     def toJson(self) -> Dict:
         return {
